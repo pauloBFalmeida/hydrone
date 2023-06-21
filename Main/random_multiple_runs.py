@@ -20,14 +20,16 @@ range_Z     = [2, 7]
 lower_bounds = [range_D[0], range_AEdAO[0], range_PdD[0]]
 upper_bounds = [range_D[1], range_AEdAO[1], range_PdD[1]]
 
-MAX_ITERATION = 128
-# MAX_ITERATION = 8
+MAX_ITERATION = 128 # number of iterations
 
-NUM_PARALLEL = 4
+NUM_PARALLEL = 4    # number of evaluations done in parallel
+
+NUM_BATCHS_SAVE = 1 # save every (NUM_BATCHS_SAVE * NUM_PARALLEL) iterations
+# this will give aprox 32 saves, close to the number of iterations of others algorithms
+
 
 save_file = False
 save_in_same_dir = False
-
 
 global dir_name
 
@@ -118,45 +120,55 @@ from multiprocessing import Process, Pool
 def run(z):
     global Z
     Z = z
-
+    # create the csv file with the headers
+    if save_file:
+        global filename
+        filename = create_file(str(Z))
+    # create history list
+    history = np.zeros(MAX_ITERATION // NUM_ITER_SAVE)
+    # start best value
     best_fitness = float('-inf')
     best_x       = [-1, -1, -1]
 
     # execute for MAX_ITERATION in batches of NUM_PARALLEL
     for i in range(MAX_ITERATION // NUM_PARALLEL):
         fitness_list = np.zeros(NUM_PARALLEL)
+        # create a list of params for evaluation
         x_list       = [[] for _ in range(NUM_PARALLEL)]
-        for j in range(NUM_PARALLEL):
-            iteration = (i * NUM_PARALLEL) + j
-#             random.seed(iteration)
+        for k in range(NUM_PARALLEL):
+            # generate random values for params
             x =  [
                     random.uniform(range_D[0],     range_D[1]),
                     random.uniform(range_AEdAO[0], range_AEdAO[1]),
                     random.uniform(range_PdD[0],   range_PdD[1])
                   ]
-            x_list[j] = x
-
+            x_list[k] = x
+        # evaluate the list of params in parralel
         with ThreadPool() as pool:
             id_x = [(k, x_list[k]) for k in range(NUM_PARALLEL)]
             fitness_wrapper = (lambda k, x: [k, fit_func(x)] )
             for result in pool.starmap(fitness_wrapper, id_x):
                 k, fitness = result
                 fitness_list[k] = fitness
-
+        # go through the results and update the best result
         for k in range(NUM_PARALLEL):
             x = x_list[k]
             fitness = fitness_list[k]
-
-            # not failed, and fitness is negative, so the best is the max
+            # if not failed, update best
+            #  fitness is negative, so the best is the max
             if (fitness != 0) and fitness > best_fitness:
                 best_fitness = fitness
                 best_x       = x
-
-        #
-        print('Z:', Z, 'i:', i, '/' , MAX_ITERATION // NUM_PARALLEL)
+        # end of batch
+        if (i % NUM_BATCHS_SAVE) == 0:
+            print('iteration:', i, 'best fitness:', best_fitness)
+            counter = i // NUM_BATCHS_SAVE
+            history[counter] = best_fitness
+            if save_file:
+                append_to_file_order(filename, "fitness at iteration", i, fitness=best_fitness)
     # return
-    return [Z, best_x, best_fitness]
-
+    return [Z, best_x, best_fitness, history]
+    
 # results[0] = [Z, (D, AEdAO, PdD), fitness, history]
 def get_best_result(results):
     # get result with best fitness
@@ -170,17 +182,23 @@ def get_best_result(results):
 
     return best_result
 
-def save_best_result(result, solver_name, seed=0):
+def save_best_result(result, solver_name, seed=None):
     # create the csv file with the headers
     global filename
-    filename = create_file('best_results_' + str(seed) + '_' + solver_name)
+    if seed != None:
+        filename = create_file('best_results_' + str(seed) + '_' + solver_name)
+    else:
+        filename = create_file('best_results_' + solver_name)
+    #
     Z             = result[0]
     D, AEdAO, PdD = result[1]
     fitness       = result[2]
-    history       = ['']
     append_to_file_order(filename, D=D, AEdAO=AEdAO, PdD=PdD, Z=Z, fitness=fitness)
-    append_to_file(filename, ['history'])
-    append_to_file(filename,history)
+    # if there is history to save
+    if (len(result) > 2):
+        history   = result[3]
+        append_to_file(filename, ['history'])
+        append_to_file(filename, history)
 
 # ========= RUN THE SEEDs ============
 global dir_name
