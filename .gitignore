@@ -1,2 +1,10 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+
+# 
+constraints.txt
+C_Cavitation.txt
+C_Resonance.txt
+C_Strength.txt
+C_Velocity.txt
+octave-workspace
