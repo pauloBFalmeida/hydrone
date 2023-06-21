@@ -1,0 +1,202 @@
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+
+from oct2py import Oct2Py
+from multiprocessing.pool import ThreadPool
+
+import csv
+from datetime import datetime
+from os import mkdir
+
+# -------- range of the variables ----------
+V_S = 7.0                   # service speed [kn]
+range_D     = [0.5, 0.8]
+range_AEdAO = [0.3, 1.05]
+range_PdD   = [0.5, 1.4]
+range_Z     = [2, 7]
+
+# Define the lower and upper bounds for each variable
+lower_bounds = [range_D[0], range_AEdAO[0], range_PdD[0]]
+upper_bounds = [range_D[1], range_AEdAO[1], range_PdD[1]]
+
+MAX_ITERATION = 128
+# MAX_ITERATION = 8
+
+NUM_PARALLEL = 4
+
+save_file = False
+save_in_same_dir = False
+
+
+global dir_name
+
+def append_to_file(filename, row):
+    with open(filename, 'a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(row)
+
+def append_to_file_order(filename, D='', AEdAO='', PdD='', Z='', P_B='', n='', fitness='', i=''):
+    row = [D, AEdAO, PdD, Z, P_B, n, fitness, i]
+    append_to_file(filename, row)
+
+def create_file(text):
+    filename = dir_name+'/' + text +'.csv'
+    with open(filename, 'w', newline='') as file:
+        writer = csv.writer(file)
+        header = ["D = propeller diameter [m]",
+                  "AEdAO = expanded area ratio",
+                  "PdD = pitch ratio",
+                  "Z = propeller's number of blades",
+                  "P_B = power brake",
+                  "n = Propeller angular speed [rpm]",
+                  "fitness",
+                  "i = thread pool id"]
+        writer.writerow(header)
+    return filename
+
+def create_dir(text):
+    if save_in_same_dir:
+        dir_name = './' + main_dir_name + '/' + text
+    else:
+        now = datetime.now()
+        dir_name = './' + text +'_'+ now.strftime("%Y_%m_%d_%H_%M")
+    try:
+        mkdir(dir_name)
+    except: pass
+    return dir_name
+
+def run_octave_evaluation(V_S,D,Z,AEdAO,PdD):
+    P_B, n = [0, 0]
+    with Oct2Py() as octave:
+        octave.warning ("off", "Octave:data-file-in-path");
+        octave.addpath('./allCodesOctave');
+        # P_B, n = octave.F_LabH2(V_S,D,Z,AEdAO,PdD, nout=2)
+        # P_B, n = octave.F_LabH2_no_cav_lim(V_S,D,Z,AEdAO,PdD, nout=2)
+#         P_B, n = octave.F_LabH2_aprox_no_cav_lim(V_S,D,Z,AEdAO,PdD, nout=2)
+        P_B, n = octave.F_LabH2_aprox(V_S,D,Z,AEdAO,PdD, nout=2)
+#         if not (P_B == 0 or n == 0):
+#             P_B, n = octave.F_LabH2(V_S,D,Z,AEdAO,PdD, nout=2)
+    return [P_B, n]
+
+def evaluate_solution(x, i=None):
+    D     = x[0]
+    AEdAO = x[1]
+    PdD   = x[2]
+    # verify that the values are in range
+    penalty = -1000
+    if (D > range_D[1] or D < range_D[0]):
+        print("out","_D_:",D,"Z:",Z,"AEdAO:",AEdAO,"PdD:",PdD)
+        return penalty
+    if (AEdAO > range_AEdAO[1] or AEdAO < range_AEdAO[0]):
+        print("out","D:",D,"Z:",Z,"_AEdAO_:",AEdAO,"PdD:",PdD)
+        return penalty
+    if (PdD > range_PdD[1] or PdD < range_PdD[0]):
+        print("out","D:",D,"Z:",Z,"AEdAO:",AEdAO,"_PdD_:",PdD)
+        return penalty
+
+    P_B, n = run_octave_evaluation(V_S,D,Z,AEdAO,PdD)
+    # to get the minimal P_B
+    # the solvers use the max value as best fitness
+    fit_value = 0
+    if (P_B == 0 or n == 0):
+        fit_value = penalty
+    else:
+        fit_value = -P_B
+
+#     print("D:",D,"Z:",Z,"AEdAO:",AEdAO,"PdD:",PdD, "fitness:",fit_value)
+    if save_file:
+        append_to_file(filename, [D, AEdAO, PdD, Z, P_B, n, fit_value, i])
+
+    return fit_value
+
+# use evaluate_solution as the fitness function
+fit_func = evaluate_solution
+
+from multiprocessing import Process, Pool
+
+def run(z):
+    global Z
+    Z = z
+
+    best_fitness = float('-inf')
+    best_x       = [-1, -1, -1]
+
+    # execute for MAX_ITERATION in batches of NUM_PARALLEL
+    for i in range(MAX_ITERATION // NUM_PARALLEL):
+        fitness_list = np.zeros(NUM_PARALLEL)
+        x_list       = [[] for _ in range(NUM_PARALLEL)]
+        for j in range(NUM_PARALLEL):
+            iteration = (i * NUM_PARALLEL) + j
+#             random.seed(iteration)
+            x =  [
+                    random.uniform(range_D[0],     range_D[1]),
+                    random.uniform(range_AEdAO[0], range_AEdAO[1]),
+                    random.uniform(range_PdD[0],   range_PdD[1])
+                  ]
+            x_list[j] = x
+
+        with ThreadPool() as pool:
+            id_x = [(k, x_list[k]) for k in range(NUM_PARALLEL)]
+            fitness_wrapper = (lambda k, x: [k, fit_func(x)] )
+            for result in pool.starmap(fitness_wrapper, id_x):
+                k, fitness = result
+                fitness_list[k] = fitness
+
+        for k in range(NUM_PARALLEL):
+            x = x_list[k]
+            fitness = fitness_list[k]
+
+            # not failed, and fitness is negative, so the best is the max
+            if (fitness != 0) and fitness > best_fitness:
+                best_fitness = fitness
+                best_x       = x
+
+        #
+        print('Z:', Z, 'i:', i, '/' , MAX_ITERATION // NUM_PARALLEL)
+    # return
+    return [Z, best_x, best_fitness]
+
+# results[0] = [Z, (D, AEdAO, PdD), fitness, history]
+def get_best_result(results):
+    # get result with best fitness
+    best_result = max(results, key=(lambda x: x[2]))
+
+    Z             =  best_result[0]
+    D, AEdAO, PdD =  best_result[1]
+    P_B           = -best_result[2]
+    print("D:",D,"Z:",Z,"AEdAO:",AEdAO,"PdD:",PdD)
+    print("P_B:",P_B)
+
+    return best_result
+
+def save_best_result(result, solver_name, seed=0):
+    # create the csv file with the headers
+    global filename
+    filename = create_file('best_results_' + str(seed) + '_' + solver_name)
+    Z             = result[0]
+    D, AEdAO, PdD = result[1]
+    fitness       = result[2]
+    history       = ['']
+    append_to_file_order(filename, D=D, AEdAO=AEdAO, PdD=PdD, Z=Z, fitness=fitness)
+    append_to_file(filename, ['history'])
+    append_to_file(filename,history)
+
+# ========= RUN THE SEEDs ============
+global dir_name
+dir_name = create_dir('random')
+
+for seed in range(10):
+    results = []
+    with Pool() as pool:
+        for result in pool.map(run, range(range_Z[0],range_Z[1]+1)):
+            results.append(result)
+
+    # sort by Z
+    results.sort(key=(lambda r: r[0]))
+
+    print("Best result random")
+    best_result = get_best_result(results)
+
+    # ======== SAVE ============
+    save_best_result(best_result, 'random', seed)
