@@ -200,15 +200,15 @@ def get_best_result(results):
 def save_best_result(result, solver_name, seed=None):
     # in case there is main dir, save the best results in this same dir,
     #     otherwise will save in the last dir created (openaies)
-    if save_in_same_dir
+    if save_in_same_dir:
         global dir_name, main_dir_name
         dir_name = main_dir_name
     # create the csv file with the headers
     global filename
-    if seed:
-        filename = create_file('best_results_' + solver_name)
-    else:
+    if seed != None:
         filename = create_file('best_results_' + str(seed) + '_' + solver_name)
+    else:
+        filename = create_file('best_results_' + solver_name)
     #
     Z             = result[0]
     D, AEdAO, PdD = result[1]
