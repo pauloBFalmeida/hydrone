@@ -146,7 +146,7 @@ def test_solver(solver):
         # print the process name (Z) and the iteration, and save in the csv
         print('Z:',Z, "fitness at iteration", (j+1), result[1], flush=True)
         if save_file:
-            append_to_file_order(filename, "fitness at iteration", j, i=result[1])
+            append_to_file_order(filename, "fitness at iteration", j, fitness=result[1])
 #         append_to_file(filename, [, j, '','','','', result[1]])
     # best solution at the end of the solver's run
     print("local optimum discovered by solver:\n", result[0])
@@ -223,7 +223,7 @@ def save_best_result(result, solver_name, seed=None):
 # ========= RUN THE SEEDs ============
 # SIGMA_INIT_CMAES    = 0.5
 # SIGMA_INIT_OPENAIES = 0.5
-for seed in range(0, 20):
+for seed in range(13, 20):
     # if seed > 4:
     #     SIGMA_INIT_CMAES    = 0.3
     #     SIGMA_INIT_OPENAIES = 0.3
@@ -336,5 +336,5 @@ for seed in range(0, 20):
     best_result_openaies = get_best_result(results_openaies)
 
     # ======== SAVE ============
-    save_best_result(best_result_cmaes, 'cmaes')
-    save_best_result(best_result_openaies, 'openaies')
+    save_best_result(best_result_cmaes, 'cmaes', seed)
+    save_best_result(best_result_openaies, 'openaies', seed)
