@@ -29,7 +29,6 @@ NUM_BATCHS_SAVE = 1 # save every (NUM_BATCHS_SAVE * NUM_PARALLEL) iterations
 
 
 save_file = False
-save_in_same_dir = False
 
 global dir_name
 
@@ -58,11 +57,8 @@ def create_file(text):
     return filename
 
 def create_dir(text):
-    if save_in_same_dir:
-        dir_name = './' + main_dir_name + '/' + text
-    else:
-        now = datetime.now()
-        dir_name = './' + text +'_'+ now.strftime("%Y_%m_%d_%H_%M")
+    now = datetime.now()
+    dir_name = './' + text +'_'+ now.strftime("%Y_%m_%d_%H_%M")
     try:
         mkdir(dir_name)
     except: pass
@@ -168,7 +164,7 @@ def run(z):
                 append_to_file_order(filename, "fitness at iteration", i, fitness=best_fitness)
     # return
     return [Z, best_x, best_fitness, history]
-    
+
 # results[0] = [Z, (D, AEdAO, PdD), fitness, history]
 def get_best_result(results):
     # get result with best fitness

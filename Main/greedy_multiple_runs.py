@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 from oct2py import Oct2Py
 from multiprocessing.pool import ThreadPool
+from multiprocessing import Process, Pool
 
 import csv
 from datetime import datetime
@@ -24,8 +25,6 @@ SET_SIZE = 4
 MAX_ITERATION = 150 // (SET_SIZE*3)
 
 save_file = False
-save_in_same_dir = False
-
 
 global dir_name
 
@@ -54,11 +53,8 @@ def create_file(text):
     return filename
 
 def create_dir(text):
-    if save_in_same_dir:
-        dir_name = './' + main_dir_name + '/' + text
-    else:
-        now = datetime.now()
-        dir_name = './' + text +'_'+ now.strftime("%Y_%m_%d_%H_%M")
+    now = datetime.now()
+    dir_name = './' + text +'_'+ now.strftime("%Y_%m_%d_%H_%M")
     try:
         mkdir(dir_name)
     except: pass
@@ -111,8 +107,6 @@ def evaluate_solution(x, i=None):
 # use evaluate_solution as the fitness function
 fit_func = evaluate_solution
 
-from multiprocessing import Process, Pool
-
 # ========= run ===========
 def run_list_parallel(x_list, best_x, best_fitness):
     fitness_list = np.zeros(SET_SIZE)
@@ -138,6 +132,10 @@ def run_list_parallel(x_list, best_x, best_fitness):
 def run(z):
     global Z
     Z = z
+    # create the csv file with the headers
+    if save_file:
+        global filename
+        filename = create_file(str(Z))
     # create history list
     history = np.zeros(MAX_ITERATION+1)
     # start with random params
