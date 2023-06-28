@@ -1,11 +1,11 @@
 import numpy as np
-import random
-import matplotlib.pyplot as plt
-
+from math import ceil
+# Run the fitness
 from oct2py import Oct2Py
 from multiprocessing.pool import ThreadPool
+# Run multiple Zs as different processes
 from multiprocessing import Pool
-
+# to save the progress of the algorithms
 import csv
 from datetime import datetime
 from os import mkdir
@@ -21,13 +21,24 @@ range_Z     = [2, 7]
 lower_bounds = [range_D[0], range_AEdAO[0], range_PdD[0]]
 upper_bounds = [range_D[1], range_AEdAO[1], range_PdD[1]]
 
-NUM_PARALLEL = 4    # number of evaluations done in parallel
+# size of step from each variable
+LIST_SIZE = {'D':     int((range_D[1]-range_D[0])        / 0.05),
+             'AEdAO': int((range_AEdAO[1]-range_AEdAO[0])/ 0.1),
+             'PdD':   int((range_PdD[1]-range_PdD[0])    / 0.1)}
 
-STEP_SIZE = {'D':     0.2,   # size of step from each variable
-             'AEdAO': 0.2,
-             'PdD':   0.2}
 
+t = [LIST_SIZE[v] for v in LIST_SIZE]
+all_iter = t[0]*t[1]*t[2]
+
+# number of octave evaluations to run in parallel in each process
+NUM_PARALLEL = 3
+
+NUM_BATCHES = ceil(LIST_SIZE['PdD'] / NUM_PARALLEL)
+
+# save the results, otherwise there is no output
 save_file = True
+
+print_octave_result = False
 
 # ----- save to file functions -------
 global dir_name
@@ -64,79 +75,41 @@ def create_dir(text):
     except: pass
     return dir_name
 
-
-# ---- fitness function --------
+# ========= Logic ===========
 def run_octave_evaluation(V_S,D,Z,AEdAO,PdD):
     P_B, n = [0, 0]
     with Oct2Py() as octave:
         octave.warning ("off", "Octave:data-file-in-path");
         octave.addpath('./allCodesOctave');
-        # P_B, n = octave.F_LabH2(V_S,D,Z,AEdAO,PdD, nout=2)
-        # P_B, n = octave.F_LabH2_no_cav_lim(V_S,D,Z,AEdAO,PdD, nout=2)
-#         P_B, n = octave.F_LabH2_aprox_no_cav_lim(V_S,D,Z,AEdAO,PdD, nout=2)
         P_B, n = octave.F_LabH2_aprox(V_S,D,Z,AEdAO,PdD, nout=2)
-#         if not (P_B == 0 or n == 0):
-#             P_B, n = octave.F_LabH2(V_S,D,Z,AEdAO,PdD, nout=2)
     return [P_B, n]
 
-def evaluate_solution(x, i=None):
-    D     = x[0]
-    AEdAO = x[1]
-    PdD   = x[2]
-    # verify that the values are in range
-    penalty = -1000
-    if (D > range_D[1] or D < range_D[0]):
-        print("out","_D_:",D,"Z:",Z,"AEdAO:",AEdAO,"PdD:",PdD)
-        return penalty
-    if (AEdAO > range_AEdAO[1] or AEdAO < range_AEdAO[0]):
-        print("out","D:",D,"Z:",Z,"_AEdAO_:",AEdAO,"PdD:",PdD)
-        return penalty
-    if (PdD > range_PdD[1] or PdD < range_PdD[0]):
-        print("out","D:",D,"Z:",Z,"AEdAO:",AEdAO,"_PdD_:",PdD)
-        return penalty
-
+    def wrapper(k, x):
+    D, AEdAO, PdD = x
     P_B, n = run_octave_evaluation(V_S,D,Z,AEdAO,PdD)
-    # to get the minimal P_B
-    # the solvers use the max value as best fitness
-    fit_value = 0
-    if (P_B == 0 or n == 0):
-        fit_value = penalty
-    else:
-        fit_value = -P_B
+    return [k, P_B]
 
-#     print("D:",D,"Z:",Z,"AEdAO:",AEdAO,"PdD:",PdD, "fitness:",fit_value)
-    if save_file:
-        append_to_file(filename, [D, AEdAO, PdD, Z, P_B, n, fit_value, i])
-
-    return fit_value
-
-# use evaluate_solution as the fitness function
-fit_func = evaluate_solution
-
-# ========= run ===========
 def run_list_parallel(x_list):
-    fitness_list = np.zeros(NUM_PARALLEL)
-    # run fit_func in parallel
-    with ThreadPool() as pool:
-        id_x = [(k, x_list[k]) for k in range(NUM_PARALLEL)]
-        fitness_wrapper = (lambda k, x: [k, fit_func(x)] )
-        for result in pool.starmap(fitness_wrapper, id_x):
-            # ajust the results to be in the same order as the x_list
+    fitness_list = np.zeros(len(x_list))
+    # run eval in parallel
+    with ThreadPool(len(x_list)) as pool:
+        id_x = [(k, x_list[k]) for k in range(len(x_list))]
+        for result in pool.starmap(wrapper, id_x):
             k, fitness = result
             fitness_list[k] = fitness
-    # return fitness_list
+    # go through the results and save
+    for k in range(len(x_list)):
+        P_B = fitness_list[k]
+        D, AEdAO, PdD = x_list[k]
+        #
+        if print_octave_result:
+            print("D:",D,"Z:",Z,"AEdAO:",AEdAO,"PdD:",PdD, "P_B:",P_B)
+        if save_file:
+            append_to_file(filename, [D, AEdAO, PdD, Z, P_B])
 
-
-def add_to_compute_list(x, x_list):
-    print(x_list, '+', x)
-    x_list.append(x)
-
-    if len(x_list) == NUM_PARALLEL:
-        run_list_parallel(x_list)
-        x_list = []
-        print(x_list, 'clear')
-
-    # return x_list
+list_D     = np.linspace(range_D[0],     range_D[1],     LIST_SIZE['D'])
+list_AEdAO = np.linspace(range_AEdAO[0], range_AEdAO[1], LIST_SIZE['AEdAO'])
+list_PdD   = np.linspace(range_PdD[0],   range_PdD[1],   LIST_SIZE['PdD'])
 
 def run(z):
     global Z
@@ -146,29 +119,27 @@ def run(z):
         global filename
         filename = create_file(str(Z))
 
-    # list to append values and compute them in parallel
-    x_list = []
+    counter = 0
+    for D in list_D:
+        for AEdAO in list_AEdAO:
+            # divide PdD in batches of size NUM_PARALLEL
+            for b in range(NUM_BATCHES):
+                start = b * NUM_PARALLEL
+                end   = (b+1) * NUM_PARALLEL
+                list_x = [(D,AEdAO,PdD) for PdD in list_PdD[start:end]]
+                # run list in parallel
+                run_list_parallel(list_x)
+                # keep count of the progress
+                counter += len(list_x)
+                print('Z:',Z, counter,'/',all_iter)
 
+    return Z
 
-    list_D = np.linspace(range_D[0], range_D[1], 5)
-
-    D = range_D[0]
-    while D <= range_D[1]:
-        AEdAO = range_AEdAO[0]
-        while AEdAO <= range_AEdAO[1]:
-            PdD = range_PdD[0]
-            while PdD <= range_PdD[1]:
-                add_to_compute_list((D, AEdAO, PdD), x_list)
-                print(x_list)
-                PdD += STEP_SIZE['PdD']
-            AEdAO += STEP_SIZE['AEdAO']
-        D += STEP_SIZE['D']
-
-# ========= RUN THE SEEDs ============
+# ========= RUN in parallel ============
 global dir_name
 dir_name = create_dir('gradient')
 
 if __name__ == '__main__':
     with Pool() as pool:
-        for _ in pool.map(run, range(range_Z[0],range_Z[1]+1)):
-            pass
+        for result_z in pool.map(run, range(range_Z[0],range_Z[1]+1)):
+            print('end of ', result_z)
