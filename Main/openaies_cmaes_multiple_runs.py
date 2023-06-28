@@ -221,19 +221,7 @@ def save_best_result(result, solver_name, seed=None):
         append_to_file(filename, history)
 
 # ========= RUN THE SEEDs ============
-# SIGMA_INIT_CMAES    = 0.5
-# SIGMA_INIT_OPENAIES = 0.5
-for seed in range(13, 20):
-    # if seed > 4:
-    #     SIGMA_INIT_CMAES    = 0.3
-    #     SIGMA_INIT_OPENAIES = 0.3
-    if seed > 9:
-        SIGMA_INIT_CMAES    = 0.1
-        SIGMA_INIT_OPENAIES = 0.1
-    # if seed > 14:
-    #     SIGMA_INIT_CMAES    = 0.05
-    #     SIGMA_INIT_OPENAIES = 0.05
-
+for seed in range(10):
 
     random.seed(seed)
     x0 =  [
