@@ -1,9 +1,10 @@
 import numpy as np
 import random
-import matplotlib.pyplot as plt
 
 from oct2py import Oct2Py
 from multiprocessing.pool import ThreadPool
+from multiprocessing import Process, Pool
+
 
 import csv
 from datetime import datetime
@@ -111,8 +112,6 @@ def evaluate_solution(x, i=None):
 # use evaluate_solution as the fitness function
 fit_func = evaluate_solution
 
-from multiprocessing import Process, Pool
-
 def run(z):
     global Z
     Z = z
@@ -191,7 +190,7 @@ def save_best_result(result, solver_name, seed=None):
     fitness       = result[2]
     append_to_file_order(filename, D=D, AEdAO=AEdAO, PdD=PdD, Z=Z, fitness=fitness)
     # if there is history to save
-    if (len(result) > 2):
+    if (len(result) > 3):
         history   = result[3]
         append_to_file(filename, ['history'])
         append_to_file(filename, history)

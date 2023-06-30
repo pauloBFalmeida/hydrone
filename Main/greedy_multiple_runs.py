@@ -1,6 +1,5 @@
 import numpy as np
 import random
-import matplotlib.pyplot as plt
 
 from oct2py import Oct2Py
 from multiprocessing.pool import ThreadPool
@@ -184,7 +183,7 @@ def run(z):
         if save_file:
             append_to_file_order(filename, "fitness at iteration", i, fitness=best_fitness)
     # return
-    return [Z, best_x, best_fitness]
+    return [Z, best_x, best_fitness, history]
 
 # results[0] = [Z, (D, AEdAO, PdD), fitness, history]
 def get_best_result(results):
@@ -212,7 +211,7 @@ def save_best_result(result, solver_name, seed=None):
     fitness       = result[2]
     append_to_file_order(filename, D=D, AEdAO=AEdAO, PdD=PdD, Z=Z, fitness=fitness)
     # if there is history to save
-    if (len(result) > 2):
+    if (len(result) > 3):
         history   = result[3]
         append_to_file(filename, ['history'])
         append_to_file(filename, history)

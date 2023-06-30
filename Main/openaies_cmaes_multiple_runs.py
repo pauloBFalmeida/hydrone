@@ -1,8 +1,7 @@
 import numpy as np
 import random
-import matplotlib.pyplot as plt
 import cma
-from es import SimpleGA, CMAES, OpenES
+from es import CMAES, OpenES
 
 from oct2py import Oct2Py
 from multiprocessing.pool import ThreadPool
@@ -215,7 +214,7 @@ def save_best_result(result, solver_name, seed=None):
     fitness       = result[2]
     append_to_file_order(filename, D=D, AEdAO=AEdAO, PdD=PdD, Z=Z, fitness=fitness)
     # if there is history to save
-    if (len(result) > 2):
+    if (len(result) > 3):
         history   = result[3]
         append_to_file(filename, ['history'])
         append_to_file(filename, history)
