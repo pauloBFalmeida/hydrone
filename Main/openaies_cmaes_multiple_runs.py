@@ -5,6 +5,7 @@ from es import CMAES, OpenES
 
 from oct2py import Oct2Py
 from multiprocessing.pool import ThreadPool
+from multiprocessing import Pool
 
 # -------- range of the variables ----------
 V_S = 7.0                   # service speed [kn]
@@ -152,9 +153,7 @@ def test_solver(solver):
     print("fitness score at this local optimum:", result[1])
     return (history, result[0])
 
-
-from multiprocessing import Process, Pool
-
+# ==== Logic ====
 def solver_for_Z(solver, z):
     global Z
     Z = z
