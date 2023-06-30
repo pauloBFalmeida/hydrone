@@ -84,7 +84,7 @@ def run_octave_evaluation(V_S,D,Z,AEdAO,PdD):
         P_B, n = octave.F_LabH2_aprox(V_S,D,Z,AEdAO,PdD, nout=2)
     return [P_B, n]
 
-    def wrapper(k, x):
+def wrapper(k, x):
     D, AEdAO, PdD = x
     P_B, n = run_octave_evaluation(V_S,D,Z,AEdAO,PdD)
     return [k, P_B]
