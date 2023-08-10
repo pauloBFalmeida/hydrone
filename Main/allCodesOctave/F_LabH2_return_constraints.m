@@ -1,4 +1,4 @@
-function [P_B,n,etaO,etaR] = F_LabH2_aprox(V_S,D,Z,AEdAO,PdD)
+function [P_B,n,etaO,etaR, t075dD,tmin075dD, tal07R,cavLim, Vtip,Vtipmax] = F_LabH2_return_constraints(V_S,D,Z,AEdAO,PdD)
 % LabH2_F computes the brake power and shaft speed for given propeller
 % parameters
 
@@ -45,7 +45,7 @@ zP = 2;         % number of propellers (single or twin-screw with conventional s
 hk = 0.5;      % distance of the propeller shaft to the keel [m]
 
 try
-    [n,P_O,etaO] = F_ProPer_aprox(Rtotal,V_S,t,w,etaR,zP,Z,D,PdD,AEdAO,hk,T_A);
+    [n,P_O,etaO, t075dD,tmin075dD, tal07R,cavLim, Vtip,Vtipmax] = F_ProPer_return_constraints (Rtotal,V_S,t,w,etaR,zP,Z,D,PdD,AEdAO,hk,T_A);
 
 %% Computation of brake power in still water
 

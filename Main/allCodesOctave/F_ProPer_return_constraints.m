@@ -1,4 +1,4 @@
-function [n,PO,etaO] = F_ProPer_aprox(R,Vs,t,w,etaR,zP,Z,D,PdD,AEdAO,hk,Ta)
+function [n,PO,etaO, t075dD,tmin075dD, tal07R,cavLim, Vtip,Vtipmax] = F_ProPer_return_constraints (R,Vs,t,w,etaR,zP,Z,D,PdD,AEdAO,hk,Ta)
 
 % F_ProPer - Computation of propeller performance through Wageningen
 % B-series prepellers.
@@ -49,7 +49,7 @@ while Kt>Kts
 end
 
 while Kts>Kt
-  J = J-0.001;
+  J = J-0.00001;
   Kt = 0;
   for i = 1:39       % 39 is the number of rows in KtM
     Kt = Kt + KtM(i,1)*J^KtM(i,2)*PdD^KtM(i,3)*AEdAO^KtM(i,4)*Z^KtM(i,5);
@@ -68,7 +68,7 @@ Rn = sqrt(Va^2+(0.75*pi*D*n)^2)*C075R/nu;       % Reynolds number
 
 if Rn>2e+6
   eRn = 1;
-  while eRn>0.01
+  while eRn>0.0001
     deltaKt = 0.000353485 ...
              -0.00333758*AEdAO*J^2 ...
              -0.00478125*AEdAO*PdD*J ...
@@ -108,7 +108,7 @@ if Rn>2e+6
     end
 
     while Kts>Kt
-      J = J-0.0001;
+      J = J-0.00001;
       Kt = deltaKt;
       for i = 1:39       % 39 is the number of rows in KtM
         Kt = Kt + KtM(i,1)*J^KtM(i,2)*PdD^KtM(i,3)*AEdAO^KtM(i,4)*Z^KtM(i,5);
@@ -190,14 +190,14 @@ tmin075dD = (0.0028+0.21*((2375-1125*PdD)*PpHPdZ/(4.123*n*Dft^3*...
 t075dD = 0.0185-0.00125*Z;
 
 %display([tmin075dD t075dD]);
-if t075dD < tmin075dD
-    %disp([D Z AEdAO PdD zP tmin075dD t075dD]);
-    fID = fopen('constraints.txt','a');
-    fprintf(fID,'%9.8f %9.8f %9.8f %9.8f %9.8f %9.8f %10s\n',...
-        Vs*3600/1852,D,Z,AEdAO,PdD,zP,'Strength');
-    fclose(fID);
-    error('Strength constraint has been reached!');
-end
+% if t075dD < tmin075dD
+    % %disp([D Z AEdAO PdD zP tmin075dD t075dD]);
+    % fID = fopen('constraints.txt','a');
+    % fprintf(fID,'%9.8f %9.8f %9.8f %9.8f %9.8f %9.8f %10s\n',...
+    %     Vs*3600/1852,D,Z,AEdAO,PdD,zP,'Strength');
+    % fclose(fID);
+    % error('Strength constraint has been reached!');
+% end
 
 
 %% Cavitation Constrant
@@ -219,27 +219,28 @@ load('BurrillCurves')
 cavLim = interp1 (sigma, tal5, sig07R,"extrap");
 
 %display([D Z AEdAO PdD sig07R tal07R]);
-if tal07R > cavLim
-    %disp([D Z AEdAO PdD zP sig07R tal07R]);
-    fID = fopen('constraints.txt','a');
-    fprintf(fID,'%9.8f %9.8f %9.8f %9.8f %9.8f %9.8f %10s\n',...
-        Vs*3600/1852,D,Z,AEdAO,PdD,zP,'Cavitation');
-    fclose(fID);
-    error('Cavitation constraint has been reached!');
-end
+% if tal07R > cavLim
+%     %disp([D Z AEdAO PdD zP sig07R tal07R]);
+%     fID = fopen('constraints.txt','a');
+%     fprintf(fID,'%9.8f %9.8f %9.8f %9.8f %9.8f %9.8f %10s\n',...
+%         Vs*3600/1852,D,Z,AEdAO,PdD,zP,'Cavitation');
+%     fclose(fID);
+%     error('Cavitation constraint has been reached!');
+% end
 
 %% Peripherical velocity constraint
 
 Vtip = pi*D*n/60;
+Vtipmax = 39;
 
-if Vtip > 39
-    %disp([D Z AEdAO PdD zP Vtip]);
-    fID = fopen('constraints.txt','a');
-    fprintf(fID,'%9.8f %9.8f %9.8f %9.8f %9.8f %9.8f %10s\n',...
-        Vs*3600/1852,D,Z,AEdAO,PdD,zP,'Velocity');
-    fclose(fID);
-    error('Peripherical velocity constraint has been reached!');
-end
+% if Vtip > Vtipmax
+%     %disp([D Z AEdAO PdD zP Vtip]);
+%     fID = fopen('constraints.txt','a');
+%     fprintf(fID,'%9.8f %9.8f %9.8f %9.8f %9.8f %9.8f %10s\n',...
+%         Vs*3600/1852,D,Z,AEdAO,PdD,zP,'Velocity');
+%     fclose(fID);
+%     error('Peripherical velocity constraint has been reached!');
+% end
 
 %}
 
