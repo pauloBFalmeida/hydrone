@@ -23,7 +23,7 @@ upper_bounds = [range_D[1], range_AEdAO[1], range_PdD[1]]
 SET_SIZE = 4
 MAX_ITERATION = 150 // (SET_SIZE*3)
 
-save_file = False
+save_file = True
 
 global dir_name
 
@@ -64,12 +64,7 @@ def run_octave_evaluation(V_S,D,Z,AEdAO,PdD):
     with Oct2Py() as octave:
         octave.warning ("off", "Octave:data-file-in-path");
         octave.addpath('./allCodesOctave');
-        # P_B, n = octave.F_LabH2(V_S,D,Z,AEdAO,PdD, nout=2)
-        # P_B, n = octave.F_LabH2_no_cav_lim(V_S,D,Z,AEdAO,PdD, nout=2)
-#         P_B, n = octave.F_LabH2_aprox_no_cav_lim(V_S,D,Z,AEdAO,PdD, nout=2)
-        P_B, n = octave.F_LabH2_aprox(V_S,D,Z,AEdAO,PdD, nout=2)
-#         if not (P_B == 0 or n == 0):
-#             P_B, n = octave.F_LabH2(V_S,D,Z,AEdAO,PdD, nout=2)
+        P_B, n = octave.F_LabH2(V_S,D,Z,AEdAO,PdD, nout=2)
     return [P_B, n]
 
 def evaluate_solution(x, i=None):
