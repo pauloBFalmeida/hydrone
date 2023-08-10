@@ -43,8 +43,8 @@ def append_to_file(filename, row):
         writer = csv.writer(file)
         writer.writerow(row)
 
-def append_to_file_order(filename, D='', AEdAO='', PdD='', Z='', P_B='', n='', fitness='', i=''):
-    row = [D, AEdAO, PdD, Z, P_B, n, fitness, i]
+def append_to_file_order(filename, D='', AEdAO='', PdD='', Z='', P_B='', n='', fitness=''):
+    row = [D, AEdAO, PdD, Z, P_B, n, fitness]
     append_to_file(filename, row)
 
 def create_file(text):
