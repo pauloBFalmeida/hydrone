@@ -11,7 +11,7 @@ from multiprocessing import Pool
 # run for this number of seeds
 NUMBER_OF_SEEDS_TO_RUN = 10
 
-# V_S list
+# list of V_S, each V_S in the list will be run NUMBER_OF_SEEDS_TO_RUN times
 V_S_list = [7.0, 7.5, 8.0, 8.5]
 
 # V_S = 7.0                   # service speed [kn]
@@ -35,6 +35,7 @@ SIGMA_INIT_OPENAIES = 0.1
 save_file = True
 save_in_same_dir = True
 
+# ---------- csv files and dir operations ---------------
 global dir_name
 
 def append_to_file(filename, row):
@@ -90,7 +91,7 @@ def run_octave_evaluation(V_S,D,Z,AEdAO,PdD):
 
 # ---- calculate the fitness ------------------
 # fitness function, to find the minimal power brake
-def evaluate_solution(x, i=None):
+def evaluate_solution(x):
     D     = x[0]
     AEdAO = x[1]
     PdD   = x[2]
@@ -98,16 +99,14 @@ def evaluate_solution(x, i=None):
 #     P_B, t075dD,tmin075dD, tal07R,cavLim, Vtip,Vtipmax
     P_B, strength,strengthMin, cavitation,cavitationMax, velocity,velocityMax = run_octave_evaluation(V_S,D,Z,AEdAO,PdD)
 
-    # add the constraints
+    # Fitness is Power Brake multiplied by 1 + the percentage of each constraint
     fit_value = P_B * (1 + max(((cavitation - cavitationMax)/cavitationMax), 0) + max(((velocity - velocityMax)/velocityMax), 0) + max(((strengthMin - strength)/strengthMin), 0) )
-    # prof version
-    # fit_value = P_B + max(((cavitation - cavitationMax)/cavitationMax), 0) + max(((velocity - velocityMax)/velocityMax), 0) + max(((strengthMin - strength)/strengthMin), 0)
 
     # we want the minimal P_B
     # the solvers use the max value as best fitness, so
     fit_value *= -1
 
-#     print("D:",D,"Z:",Z,"AEdAO:",AEdAO,"PdD:",PdD, "fitness:",fit_value)
+    # save to the file
     if save_file:
         penalty = max(((cavitation - cavitationMax)/cavitationMax), 0) + max(((velocity - velocityMax)/velocityMax), 0) + max(((strengthMin - strength)/strengthMin), 0)
         valid = (penalty == 0)
@@ -115,56 +114,14 @@ def evaluate_solution(x, i=None):
 
     return fit_value
 
-# def evaluate_solution(x, i=None):
-#     D     = x[0]
-#     AEdAO = x[1]
-#     PdD   = x[2]
-#     #
-#     P_B, t075dD,tmin075dD, tal07R,cavLim, Vtip,Vtipmax = run_octave_evaluation(V_S,D,Z,AEdAO,PdD)
-
-#     # verify if broke any constraints limits
-#     penalty = 0
-#         # Strength Constraint
-#     if (t075dD < tmin075dD):
-#         penalty = tmin075dD - t075dD
-# #         print('broke Strength', penalty)
-
-#         # Cavitation Constrant
-#     if (tal07R > cavLim):
-#         penalty = tal07R - cavLim
-# #         print('broke Cavitation', penalty)
-
-#         # Peripherical Velocity Constraint
-#     if (Vtip > Vtipmax):
-#         penalty = Vtip - Vtipmax
-# #         print('broke Velocity', penalty)
-
-#     if penalty > 0:
-#         penalty += PENALTY_ADD
-
-#     # we want the minimal P_B
-#     # the solvers use the max value as best fitness, so
-#     fit_value = -(P_B + penalty)
-
-# #     print("D:",D,"Z:",Z,"AEdAO:",AEdAO,"PdD:",PdD, "fitness:",fit_value)
-#     if save_file:
-#         valid = (penalty == 0)
-#         append_to_file(filename, [D, AEdAO, PdD, Z, P_B, 0, fit_value, t075dD,tmin075dD, tal07R,cavLim, Vtip,Vtipmax, penalty, valid])
-
-#     return fit_value
-
 # use evaluate_solution as the fitness function
 fit_func = evaluate_solution
 
 # -------------------------------
 
-# wrapper tho add the index of solution in the array, to the response of the ThreadPool
-def fit_func_parallel_wrapper(i, solution):
-    fitness = fit_func(solution, i)
-    return [i, fitness]
-
 # defines a function to use solver to solve fit_func
 def test_solver(solver):
+    # history of the best fitness at each iteration (generation)
     history = np.zeros(MAX_ITERATION)
     for j in range(MAX_ITERATION):
         # ask for the population
@@ -174,6 +131,9 @@ def test_solver(solver):
         # parallel run of fitness evaluation
         with ThreadPool() as pool:
             id_solutions = [(i, solutions[i]) for i in range(len(solutions))]
+            # wrapper to add the index of solution in the array, to the response of the ThreadPool
+            # this keeps the fitness_list and solutions list in the same order (necessary)
+            fit_func_parallel_wrapper = (lambda i, x: [i, fit_func(x)] )
             for result in pool.starmap(fit_func_parallel_wrapper, id_solutions, chunksize=4):
                 i, fitness = result
                 fitness_list[i] = fitness
@@ -185,7 +145,6 @@ def test_solver(solver):
         print('Z:',Z, "fitness at iteration", (j+1), result[1], flush=True)
         if save_file:
             append_to_file_order(filename, "fitness at iteration", j, fitness=result[1])
-#         append_to_file(filename, [, j, '','','','', result[1]])
     # best solution at the end of the solver's run
     print("local optimum discovered by solver:\n", result[0])
     print("fitness score at this local optimum:", result[1])
@@ -205,8 +164,6 @@ def solver_for_Z(solver, z):
     history, best_solution = test_solver(solver)
 
     # print best solution
-
-    # get the P_B from best solution
     D       = best_solution[0]
     AEdAO   = best_solution[1]
     PdD     = best_solution[2]
@@ -220,17 +177,16 @@ def solver_for_Z(solver, z):
 
     return [Z, best_solution, fitness, history]
 
-# results[0] = [Z, (D, AEdAO, PdD), fitness, history]
+# each element of the list results is [Z, (D, AEdAO, PdD), fitness, history]
 def get_best_result(results):
     # get result with best fitness
     best_result = max(results, key=(lambda x: x[2]))
-
+    # print the values
     Z             =  best_result[0]
     D, AEdAO, PdD =  best_result[1]
-    P_B           = -best_result[2]
+    fitness       = -best_result[2]
     print("D:",D,"Z:",Z,"AEdAO:",AEdAO,"PdD:",PdD)
-    print("P_B:",P_B)
-
+    print("fitness:",fitness)
     return best_result
 
 def get_valid_results(results):
@@ -239,32 +195,16 @@ def get_valid_results(results):
     for r in results:
         Z             =  r[0]
         D, AEdAO, PdD =  r[1]
-        P_B_old       = -r[2]
-#         print()
-#         print("D:",D,"Z:",Z,"AEdAO:",AEdAO,"PdD:",PdD)
-#         print("P_B:",P_B_old)
+        fitness       = -r[2]
+        # run the evaluation
         P_B, t075dD,tmin075dD, tal07R,cavLim, Vtip,Vtipmax = run_octave_evaluation(V_S,D,Z,AEdAO,PdD)
-        penalty = 0
-            # Strenght Constraint
-        if (t075dD < tmin075dD):
-            penalty = tmin075dD - t075dD
-#             print('broke Strength', penalty)
-            # Cavitation Constraint
-        if (tal07R > cavLim):
-            penalty = tal07R - cavLim
-#             print('broke Cavitation', penalty)
-            # Peripherical Velocity Constraint
-        if (Vtip > Vtipmax):
-            penalty = Vtip - Vtipmax
-#             print('broke Velocity', penalty)
-#         print("real P_B:",P_B)
-        #
-        if penalty == 0:
+        # if the fitness and the P_B are the same, then there is no penalty on the fitness, and thus a valid result
+        if fitness == P_B:
             valid_results.append(r)
 
     return valid_results
 
-def save_best_result(result, solver_name, seed=None):
+def save_best_result(result, solver_name, seed=-1):
     # in case there is main dir, save the best results in this same dir,
     #     otherwise will save in the last dir created (openaies)
     if save_in_same_dir:
@@ -272,7 +212,7 @@ def save_best_result(result, solver_name, seed=None):
         dir_name = main_dir_name
     # create the csv file with the headers
     global filename
-    if seed != None:
+    if seed != -1:
         filename = create_file('best_results_' + str(seed) + '_' + solver_name)
     else:
         filename = create_file('best_results_' + solver_name)
@@ -403,7 +343,7 @@ for vs in V_S_list:
             best_result_openaies = get_best_result(valid_results_openaies)
 
         # ======== SAVE ============
-        # if len(valid_results_cmaes) > 0:
-        #     save_best_result(best_result_cmaes, 'cmaes', seed)
+        if len(valid_results_cmaes) > 0:
+            save_best_result(best_result_cmaes, 'cmaes', seed)
         if len(valid_results_openaies) > 0:
             save_best_result(best_result_openaies, 'openaies', seed)

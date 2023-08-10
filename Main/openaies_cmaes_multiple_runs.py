@@ -23,24 +23,13 @@ NPOPULATION   = 12 # size of population
 MAX_ITERATION = 30 # run solver for this generations
 
 NPARAMS = 3  # number of parameters to evaluate
-SIGMA_INIT_CMAES    = 0.3
-SIGMA_INIT_OPENAIES = 0.3
+SIGMA_INIT_CMAES    = 0.1
+SIGMA_INIT_OPENAIES = 0.1
 
 save_file = True
 save_in_same_dir = True
 
-xs = [   (0.8, 0.8401366886333315, 0.844319186413438),
-         (0.8, 0.6525911430226695, 0.6522307369105027),
-         (0.8, 0.8512620590064772, 0.7274079885339991),
-         (0.8, 0.8087368724258727, 0.6826989487312035),
-         (0.8, 0.849152479467824, 0.7607648846657031),
-         (0.8, 0.7228298190442652, 0.6922319437006541),
-         (0.8, 0.7131163447477546, 0.6597167468993079),
-         (0.8, 0.8520830453522967, 0.798551954761076),
-         (0.8, 0.8318642717307598, 0.7990926287671754),
-         (0.8, 0.6980446164099933, 0.7514978564181811)
-    ]
-
+# ---------- csv files and dir operations ---------------
 global dir_name
 
 def append_to_file(filename, row):
