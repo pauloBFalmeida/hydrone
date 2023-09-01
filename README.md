@@ -1,5 +1,7 @@
 # hydrone (Pt)
 
+Versão que não utiliza constraints no calculo da fitness
+
 ## Main
 Contêm a pasta allCodesOctave com os códigos em octave para avaliação, e o algoritmo genético do artigo original no DifEvo.m
 Também contêm os jupyter-notebooks com os outros algoritmos, além dos arquivos .py para multiplas execuções (10 execuções).
