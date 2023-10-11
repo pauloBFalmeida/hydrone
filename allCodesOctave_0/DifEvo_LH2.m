@@ -23,7 +23,7 @@ LimU = [0.8 7 1.05 1.4];
 LimL = [0.5 2 0.30 0.5];
 
 %% Method Differential Evolution
-V_S = 7.0;
+% V_S = 7.0;
 
 np = 5;        % population size
 kmax = 2;      % Number of iterations (generations)

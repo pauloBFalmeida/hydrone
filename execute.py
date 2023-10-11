@@ -10,7 +10,9 @@ from multiprocessing import Process, Pool
 
 from oct2py import Oct2Py
 
-V_S = 7.0    # service speed [kn]
+V_S = 7.5    # service speed [kn]
+
+n_runs = 10 # number of executions (in parallel)
 
 def create_file(text):
     filename = dir_name+'/' + text +'.csv'
@@ -71,8 +73,8 @@ if __name__ == '__main__':
 
     # run 10 runs
     results = []
-    with Pool(10) as pool:
-        seeds = [seed for seed in range(10)]
+    with Pool(n_runs) as pool:
+        seeds = [seed for seed in range(n_runs)]
         for result in pool.map(run_original, seeds):
             results.append(result)
 
