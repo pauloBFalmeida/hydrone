@@ -1,3 +1,0 @@
-run - n sei
-run2 - cmaes e openaies com 5 e 10 de pop (80 runs)
-run3 - cmaes, openaies, original, original mod

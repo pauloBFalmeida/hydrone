@@ -11,3 +11,5 @@ C_Resonance.txt
 C_Strength.txt
 C_Velocity.txt
 octave-workspace
+output.mat
+best_fitness.txt
