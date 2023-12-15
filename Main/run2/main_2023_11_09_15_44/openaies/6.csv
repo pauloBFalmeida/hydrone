@@ -1,0 +1,183 @@
+D = propeller diameter [m],AEdAO = expanded area ratio,PdD = pitch ratio,Z = propeller's number of blades,P_B = power brake,n = Propeller angular speed [rpm],fitness,t075dD,tmin075dD,tal07R,cavLim,Vtip,Vtipmax,penalty,valid
+0.5220998172737012,1.0384128532102344,1.2490480033461588,6,136.63089056215745,0,-245.66777540012632,0.011,0.011351699340020522,0.3460495529402523,0.19583376129424115,28.90821084728775,39.0,0.7980397726264161,False
+0.6234843970444786,0.8382953166573228,1.1875436649028988,6,112.77618625651601,0,-186.64414562408248,0.011,0.010399463563762338,0.3713343259903044,0.22437172605277247,25.614960225493764,39.0,0.6549960751425792,False
+0.5,0.9673462076579836,1.2393748043471027,6,141.69324053575582,0,-289.04037147116696,0.011,0.011595760541480312,0.3678889020632525,0.18500593317551442,30.339021263209144,39.0,1.0399023296967265,False
+0.6219724860050276,0.8949857362351998,1.277536281900582,6,117.05925207198709,0,-194.53334567056913,0.011,0.010352078809262179,0.3887061750381437,0.23390156566156217,24.59027657305554,39.0,0.6618365676122582,False
+0.5972322243270344,1.012115051918595,1.4,6,127.6593230430057,0,-215.0018530775114,0.011,0.010419416950723353,0.40095177631140305,0.2380687961714977,24.167543522326024,39.0,0.6841844994359079,False
+fitness at iteration,0,,,,,-186.64414562408248
+0.8,0.8449065472601686,1.2724743160535923,6,92.91828010276356,0,-119.49819822727653,0.011,0.009175001325043728,0.3731545918706485,0.29015402243240634,19.79921444889958,39.0,0.2860569319095956,False
+0.7789917931266986,1.05,1.3123751407718656,6,96.80257957566978,0,-107.60899154229995,0.011,0.009282486034246354,0.3239300426231622,0.2914000333852451,19.70688817037462,39.0,0.11163351239191807,False
+0.8,0.8712308391128342,1.1646036785696452,6,89.57425110510722,0,-103.26826871815936,0.011,0.009252786554101427,0.32002473481663357,0.27758745558663245,20.75942021761761,39.0,0.15287895175348384,False
+0.8,1.05,1.3333025538206926,6,95.25011662090796,0,-104.09217352018305,0.011,0.009145044723991,0.3277050356120484,0.2998682975262703,19.099950856026577,39.0,0.09282988003538256,False
+0.5853579501761471,0.8464958452928013,1.2271047711778458,6,121.39985563454522,0,-221.31452975411224,0.011,0.010699049383657932,0.3919501158813577,0.21500028731419502,26.641088634269295,39.0,0.8230213586113654,False
+fitness at iteration,1,,,,,-103.26826871815936
+0.77912368410062,1.0369963624756542,1.4,6,99.95796166014823,0,-119.51517660848121,0.011,0.009175066897631467,0.35945431308273423,0.3006339568354796,19.049297205017695,39.0,0.1956543993446614,False
+0.7483369106794469,0.979463552899586,1.4,6,103.70046964881192,0,-137.2857614354091,0.011,0.009345183094668426,0.3844213628934735,0.29037735201581916,19.78589604675746,39.0,0.32386827080278296,False
+0.8,0.9916602424235665,1.4,6,97.65296454134135,0,-117.98207926482603,0.011,0.009058820659869932,0.3704079814905364,0.30658416691516094,18.657638924729532,39.0,0.2081771384920768,False
+0.8,0.9602589734409849,1.4,6,97.6712147124098,0,-121.66689064210212,0.011,0.009055641650458619,0.38127826437520074,0.3060808986605147,18.689245613215885,39.0,0.24567807414238596,False
+0.736139826740559,0.867153848404877,1.386249088791777,6,104.80006129018454,0,-156.97588355292757,0.011,0.009420929195273637,0.42397271834119554,0.28305218522654263,20.34162329168207,39.0,0.4978606082898327,False
+fitness at iteration,2,,,,,-103.26826871815936
+0.6073624888082443,0.7334725984351675,1.4,6,126.64896089395941,0,-280.61549767132385,0.011,0.010278615873914758,0.5199774758443583,0.2346791519016006,24.51098371786897,39.0,1.2156952231631608,False
+0.8,1.05,1.4,6,97.62014978901246,0,-111.65398903696023,0.011,0.009063392978509256,0.3515120242344617,0.30733032249343223,18.611056727184664,39.0,0.14375965697941717,False
+0.8,0.8790522837018115,1.4,6,97.74874256927973,0,-132.29038577986842,0.011,0.009045414778703183,0.41200890505573606,0.3044314381512118,18.794952095082508,39.0,0.3533717396528878,False
+0.8,0.910512071342044,1.4,6,97.71379521555943,0,-127.97408990894985,0.011,0.00904973343501879,0.3996168417993551,0.30512487544980754,18.749806730883975,39.0,0.30968293296392113,False
+0.8,0.9388511806629055,1.4,6,97.68845658094233,0,-124.30775174495261,0.011,0.009053246792273208,0.3889907891619552,0.3056921976627825,18.713761642743595,39.0,0.2724917159680394,False
+fitness at iteration,3,,,,,-103.26826871815936
+0.8,0.9305822612717921,1.4,6,97.69681068349193,0,-125.35811088932698,0.011,0.009052280998546287,0.39203786798785445,0.30553148175137473,18.7239250307508,39.0,0.2831341167875918,False
+0.8,0.9725320984545023,1.4,6,97.66112415196955,0,-120.19912774861724,0.011,0.009056901805983338,0.3769734416804057,0.3062888290415974,18.676168540851982,39.0,0.23077763841399707,False
+0.8,1.05,1.4,6,97.62014978901246,0,-111.65398903696023,0.011,0.009063392978509256,0.3515120242344617,0.30733032249343223,18.611056727184664,39.0,0.14375965697941717,False
+0.8,1.0274642816226063,1.4,6,97.628581446423,0,-114.02028176823943,0.011,0.009061768936687583,0.3586321120785274,0.3070747047839175,18.626977578935726,39.0,0.167898581326944,False
+0.8,1.009588429930878,1.4,6,97.64273271195536,0,-115.96915013547836,0.011,0.00906040854048843,0.3644296609930717,0.30683943047857903,18.64166563857758,39.0,0.18768849370065938,False
+fitness at iteration,4,,,,,-103.26826871815936
+0.8,1.05,1.4,6,97.62014978901246,0,-111.65398903696023,0.011,0.009063392978509256,0.3515120242344617,0.30733032249343223,18.611056727184664,39.0,0.14375965697941717,False
+0.8,1.05,1.4,6,97.62014978901246,0,-111.65398903696023,0.011,0.009063392978509256,0.3515120242344617,0.30733032249343223,18.611056727184664,39.0,0.14375965697941717,False
+0.8,1.05,1.4,6,97.62014978901246,0,-111.65398903696023,0.011,0.009063392978509256,0.3515120242344617,0.30733032249343223,18.611056727184664,39.0,0.14375965697941717,False
+0.8,1.05,1.4,6,97.62014978901246,0,-111.65398903696023,0.011,0.009063392978509256,0.3515120242344617,0.30733032249343223,18.611056727184664,39.0,0.14375965697941717,False
+0.8,1.05,1.4,6,97.62014978901246,0,-111.65398903696023,0.011,0.009063392978509256,0.3515120242344617,0.30733032249343223,18.611056727184664,39.0,0.14375965697941717,False
+fitness at iteration,5,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,6,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,7,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,8,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,9,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,10,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,11,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,12,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,13,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,14,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,15,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,16,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,17,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,18,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,19,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,20,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,21,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,22,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,23,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,24,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,25,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,26,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,27,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,28,,,,,-103.26826871815936
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+nan,nan,nan,6,nan,0,nan,0.011,nan,nan,nan,nan,39.0,nan,False
+fitness at iteration,29,,,,,-103.26826871815936
+Best Solution
+0.8,0.8712308391128342,1.1646036785696452,6,,,-103.26826871815936
