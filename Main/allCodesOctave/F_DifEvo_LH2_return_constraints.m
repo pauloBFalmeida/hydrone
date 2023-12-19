@@ -32,8 +32,8 @@ LimL = [0.5 2 0.30 0.5];
 %% Method Differential Evolution
 % V_S = 7.0;
 
-np = 5;        % population size
-kmax = 5;      % Number of iterations (generations)
+np = 30;        % population size
+kmax = 30;      % Number of iterations (generations)
 CR=0.5;         % factor that defines the crossover (0.5 < CR < 1)
 F=0.8;          % weight function that defines the mutation (0.5 < F < 1).
 
