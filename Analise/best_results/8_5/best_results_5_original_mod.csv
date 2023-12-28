@@ -1,4 +1,3 @@
-D = propeller diameter [m],AEdAO = expanded area ratio,PdD = pitch ratio,Z = propellers number of blades,P_B = power brake,n = Propeller angular speed [rpm],fitness
-0.794655,0.65474,1.320385,3,212.479834,629.087858,-212.479834
-history
--212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834,-212.479834
+D = propeller diameter [m],AEdAO = expanded area ratio,PdD = pitch ratio,Z = propeller's number of blades,P_B = power brake,n = Propeller angular speed [rpm],fitness,t075dD,tmin075dD,tal07R,cavLim,Vtip,Vtipmax,penalty,valid
+0.8,1.0029093507662918,0.7837943666477132,6,172.9648806199709,172.9648806199709,-172.9648806199709,,,,,,,,
+history,,,,,,,,,,,,,,

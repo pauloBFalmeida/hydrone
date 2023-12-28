@@ -1,4 +1,2 @@
-D = propeller diameter [m],AEdAO = expanded area ratio,PdD = pitch ratio,Z = propellers number of blades,P_B = power brake,n = Propeller angular speed [rpm],fitness
-0.8,0.748343,0.631546,5,106.897982,818.98993,-106.897982
-history
--164.474927,-164.474927,-164.474927,-164.474927,-164.474927,-164.474927,-164.474927,-164.474927,-164.474927,-164.474927,-164.474927,-164.474927,-112.262374,-112.262374,-112.262374,-112.262374,-112.262374,-112.262374,-112.262374,-112.262374,-112.262374,-112.262374,-112.262374,-112.262374,-106.897982,-106.897982,-106.897982,-106.897982,-106.897982,-106.897982
+D = propeller diameter [m],AEdAO = expanded area ratio,PdD = pitch ratio,Z = propeller's number of blades,P_B = power brake,n = Propeller angular speed [rpm],fitness,i = thread pool id
+0.8,0.7247923485998733,0.6692004125322296,5,,,-106.33693738348484,
