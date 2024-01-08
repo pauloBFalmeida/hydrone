@@ -57,7 +57,7 @@ def run_multiple_Openaies(NUMBER_OF_SEEDS_TO_RUN, V_S_list, NPOPULATION, MAX_ITE
             mkdir(dir_seed)
 
             # create config file
-            create_config_file_ES(dir_seed, V_S, NPOPULATION, MAX_ITERATION, seed, x0, SIGMA_INIT_OPENAIES)
+            create_config_file_ES(dir_seed, SOLVER_NAME, V_S, NPOPULATION, MAX_ITERATION, seed, x0, SIGMA_INIT_OPENAIES)
 
             try:
                 best_result = run_solver(dir_seed, openaies, SOLVER_NAME, V_S, seed, NPOPULATION, MAX_ITERATION)

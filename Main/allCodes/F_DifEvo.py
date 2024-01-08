@@ -13,7 +13,7 @@ def F_DifEvo_LH2_return_constraints_fitness(V_S, csv_filename):
 # Implementation
 def DifEvo_LH2(V_S, csv_filename, original_fitness=True):
     # seed for numpy
-    seed = int(random.random() * 10000)
+    seed = int(random.random() * 1000)
     np.random.seed( seed )
     print('seed', seed )
 

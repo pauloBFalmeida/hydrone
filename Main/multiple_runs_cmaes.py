@@ -51,7 +51,7 @@ def run_multiple_Cmaes(NUMBER_OF_SEEDS_TO_RUN, V_S_list, NPOPULATION, MAX_ITERAT
             mkdir(dir_seed)
 
             # create config file
-            create_config_file_ES(dir_seed, V_S, NPOPULATION, MAX_ITERATION, seed, x0, SIGMA_INIT_CMAES)
+            create_config_file_ES(dir_seed, SOLVER_NAME, V_S, NPOPULATION, MAX_ITERATION, seed, x0, SIGMA_INIT_CMAES)
 
             try:
                 best_result = run_solver(dir_seed, cmaes, SOLVER_NAME, V_S, seed, NPOPULATION, MAX_ITERATION)

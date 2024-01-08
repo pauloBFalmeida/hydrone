@@ -55,7 +55,7 @@ def create_dir(text):
     except: pass
     return dir_name
 
-def create_config_file_DifEvo(dir_solver, V_S, NPOPULATION, MAX_ITERATION, SEED, new_fitness):
+def create_config_file_DifEvo(dir_solver, SOLVER_NAME, V_S, NPOPULATION, MAX_ITERATION, SEED, new_fitness):
     # save the configs in a file
     filename = dir_solver+'/' + 'configs.csv'
     with open(filename, 'w', newline='') as file:
@@ -64,9 +64,10 @@ def create_config_file_DifEvo(dir_solver, V_S, NPOPULATION, MAX_ITERATION, SEED,
         writer.writerow( ["NPOPULATION",    NPOPULATION] )
         writer.writerow( ["MAX_ITERATION",  MAX_ITERATION] )
         writer.writerow( ["SEED",           SEED] )
+        writer.writerow( ["Solver Name",    SOLVER_NAME] )
         writer.writerow( ["New Fitness",    new_fitness] )
 
-def create_config_file_ES(dir_solver, V_S, NPOPULATION, MAX_ITERATION, SEED, x0, SIGMA_INIT):
+def create_config_file_ES(dir_solver, SOLVER_NAME V_S, NPOPULATION, MAX_ITERATION, SEED, x0, SIGMA_INIT):
     # save the configs in a file
     filename = dir_solver+'/' + 'configs.csv'
     with open(filename, 'w', newline='') as file:
@@ -75,6 +76,7 @@ def create_config_file_ES(dir_solver, V_S, NPOPULATION, MAX_ITERATION, SEED, x0,
         writer.writerow( ["NPOPULATION",    NPOPULATION] )
         writer.writerow( ["MAX_ITERATION",  MAX_ITERATION] )
         writer.writerow( ["SEED",           SEED] )
+        writer.writerow( ["Solver Name",    SOLVER_NAME] )
         writer.writerow( ["x0 D",           x0[0]] )
         writer.writerow( ["x0 AEdAO",       x0[1]] )
         writer.writerow( ["x0 PdD",         x0[2]] )

@@ -29,7 +29,7 @@ def parallel_seed_run(dir_vs, seed, V_S):
     dir_seed = dir_vs +'/' + str(seed)
     mkdir(dir_seed)
 
-    create_config_file_DifEvo(dir_seed, V_S, NPOPULATION, MAX_ITERATION, seed, True)
+    create_config_file_DifEvo(dir_seed, SOLVER_NAME, V_S, NPOPULATION, MAX_ITERATION, seed, True)
 
     filename_allRun = dir_seed + '/' + 'allRunSaved_' + str(seed) + '.csv'
 
@@ -142,5 +142,6 @@ if __name__ == '__main__':
 
     # list of V_S, each V_S in the list will be run NUMBER_OF_SEEDS_TO_RUN times
     V_S_list = [7.0, 7.5, 8.0, 8.5]
+    V_S_list = [8.5]
 
     run_multiple_DifEvo_newFitness(NUMBER_OF_SEEDS_TO_RUN, V_S_list)

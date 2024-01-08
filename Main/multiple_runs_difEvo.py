@@ -29,7 +29,7 @@ def parallel_seed_run(dir_vs, seed, V_S):
     dir_seed = dir_vs +'/' + str(seed)
     mkdir(dir_seed)
 
-    create_config_file_DifEvo(dir_seed, V_S, NPOPULATION, MAX_ITERATION, seed, False)
+    create_config_file_DifEvo(dir_seed, SOLVER_NAME, V_S, NPOPULATION, MAX_ITERATION, seed, False)
 
     filename_allRun = dir_seed + '/' + 'allRunSaved_' + str(seed) + '.csv'
 
