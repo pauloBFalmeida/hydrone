@@ -2,15 +2,12 @@ import numpy as np
 import random
 from es import CMAES, OpenES
 
+from oct2py import Oct2Py
 from multiprocessing.pool import ThreadPool
 from multiprocessing import Pool
 
 from files_def_multiple_runs import *
 
-# --- numba ---
-import sys
-sys.path.append('allCodes')
-from F_LabH2 import F_LabH2_return_constraints
 
 # -------- range of the variables ----------
 range_D     = [0.5, 0.8]
@@ -32,7 +29,11 @@ NPARAMS = 3  # number of parameters to evaluate
 
 # ------- logic ---------
 def run_octave_evaluation(V_S,D,Z,AEdAO,PdD):
-    P_B, n, etaO,etaR, t075dD,tmin075dD, tal07R,cavLim, Vtip,Vtipmax = F_LabH2_return_constraints(V_S,D,Z,AEdAO,PdD, use_numba=True)
+    P_B, t075dD,tmin075dD, tal07R,cavLim, Vtip,Vtipmax = [-1, -1, -1, -1, -1, -1, -1]
+    with Oct2Py() as octave:
+        octave.warning ("off", "Octave:data-file-in-path");
+        octave.addpath('./allCodesOctave');
+        P_B, n, etaO,etaR, t075dD,tmin075dD, tal07R,cavLim, Vtip,Vtipmax = octave.F_LabH2_return_constraints(V_S,D,Z,AEdAO,PdD, nout=10)
     return [P_B, t075dD,tmin075dD, tal07R,cavLim, Vtip,Vtipmax]
 
 # calculate the fitness

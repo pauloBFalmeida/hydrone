@@ -1,5 +1,6 @@
 import pandas as pd
 
+from oct2py import Oct2Py
 from multiprocessing import Pool
 
 from files_def_multiple_runs import *
@@ -9,11 +10,6 @@ SOLVER_NAME = 'DE'
 # population and generations arent set here, this is only to put in the config files
 NPOPULATION   = 30
 MAX_ITERATION = 30
-
-# --- numba ---
-import sys
-sys.path.append('allCodes')
-from F_DifEvo import F_DifEvo_LH2_return_constraints
 
 
 # ==== parallel run DE ====
@@ -34,7 +30,11 @@ def parallel_seed_run(dir_vs, seed, V_S):
     filename_allRun = dir_seed + '/' + 'allRunSaved_' + str(seed) + '.csv'
 
     # run DE
-    D, Z, AEdAO, PdD, P_B = F_DifEvo_LH2_return_constraints(V_S, filename_allRun)
+    with Oct2Py() as octave:
+        octave.warning ("off", "Octave:data-file-in-path");
+        octave.addpath('./allCodesOctave');
+        octave.eval('pkg load statistics')
+        D, Z, AEdAO, PdD, P_B = octave.F_DifEvo_LH2_return_constraints(V_S, filename_allRun, nout=5)
 
     best_result = (D, Z, AEdAO, PdD, P_B)
     print("Best result", SOLVER_NAME)
