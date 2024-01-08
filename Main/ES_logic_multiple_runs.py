@@ -11,8 +11,6 @@ from files_def_multiple_runs import *
 import sys
 sys.path.append('allCodes')
 from F_LabH2 import F_LabH2_return_constraints
-from F_DifEvo import F_DifEvo_LH2_return_constraints_fitness, F_DifEvo_LH2_return_constraints
-
 
 # -------- range of the variables ----------
 range_D     = [0.5, 0.8]

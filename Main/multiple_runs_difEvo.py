@@ -2,8 +2,6 @@ import pandas as pd
 
 from multiprocessing import Pool
 
-from ES_logic_multiple_runs import *
-
 from files_def_multiple_runs import *
 
 SOLVER_NAME = 'DE'
@@ -14,8 +12,8 @@ MAX_ITERATION = 30
 
 # --- numba ---
 import sys
-sys.path.append('allCodesOctave')
-from F_DifEvo import F_DifEvo_LH2_return_constraints_fitness, F_DifEvo_LH2_return_constraints
+sys.path.append('allCodes')
+from F_DifEvo import F_DifEvo_LH2_return_constraints
 
 
 # ==== parallel run DE ====

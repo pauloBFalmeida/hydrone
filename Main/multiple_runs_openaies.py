@@ -59,15 +59,16 @@ def run_multiple_Openaies(NUMBER_OF_SEEDS_TO_RUN, V_S_list, NPOPULATION, MAX_ITE
             # create config file
             create_config_file_ES(dir_seed, V_S, NPOPULATION, MAX_ITERATION, seed, x0, SIGMA_INIT_OPENAIES)
 
-            best_result = run_solver(dir_seed, openaies, SOLVER_NAME, V_S, seed, NPOPULATION, MAX_ITERATION)
-
-            print(best_result)
+            try:
+                best_result = run_solver(dir_seed, openaies, SOLVER_NAME, V_S, seed, NPOPULATION, MAX_ITERATION)
+                print(best_result)
+            except: pass
 
 
 if __name__ == '__main__':
     # run for this number of seeds
     NUMBER_OF_SEEDS_TO_RUN = 10
-    
+
     # list of V_S, each V_S in the list will be run NUMBER_OF_SEEDS_TO_RUN times
     V_S_list = [7.0, 7.5, 8.0, 8.5]
 

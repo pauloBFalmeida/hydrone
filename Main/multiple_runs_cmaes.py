@@ -53,10 +53,10 @@ def run_multiple_Cmaes(NUMBER_OF_SEEDS_TO_RUN, V_S_list, NPOPULATION, MAX_ITERAT
             # create config file
             create_config_file_ES(dir_seed, V_S, NPOPULATION, MAX_ITERATION, seed, x0, SIGMA_INIT_CMAES)
 
-            best_result = run_solver(dir_seed, cmaes, SOLVER_NAME, V_S, seed, NPOPULATION, MAX_ITERATION)
-
-            print(best_result)
-
+            try:
+                best_result = run_solver(dir_seed, cmaes, SOLVER_NAME, V_S, seed, NPOPULATION, MAX_ITERATION)
+                print(best_result)
+            except: pass
 
 if __name__ == '__main__':
     # run for this number of seeds

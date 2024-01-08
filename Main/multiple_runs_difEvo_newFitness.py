@@ -2,8 +2,6 @@ import pandas as pd
 
 from multiprocessing import Pool
 
-from ES_logic_multiple_runs import *
-
 from files_def_multiple_runs import *
 
 SOLVER_NAME = 'DE_mod'
@@ -14,8 +12,8 @@ MAX_ITERATION = 30
 
 # --- numba ---
 import sys
-sys.path.append('allCodesOctave')
-from F_DifEvo import F_DifEvo_LH2_return_constraints_fitness, F_DifEvo_LH2_return_constraints
+sys.path.append('allCodes')
+from F_DifEvo import F_DifEvo_LH2_return_constraints_fitness
 
 
 # ==== parallel run DE ====
@@ -145,4 +143,4 @@ if __name__ == '__main__':
     # list of V_S, each V_S in the list will be run NUMBER_OF_SEEDS_TO_RUN times
     V_S_list = [7.0, 7.5, 8.0, 8.5]
 
-    run_multiple_DifEvo(NUMBER_OF_SEEDS_TO_RUN, V_S_list)
+    run_multiple_DifEvo_newFitness(NUMBER_OF_SEEDS_TO_RUN, V_S_list)
