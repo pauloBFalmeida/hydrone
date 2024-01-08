@@ -2,7 +2,6 @@ import numpy as np
 import random
 from es import CMAES, OpenES
 
-from multiprocessing.pool import ThreadPool
 from multiprocessing import Pool
 
 from files_def_multiple_runs import *
@@ -68,17 +67,10 @@ def test_solver(solver):
     for j in range(MAX_ITERATION):
         # ask for the population
         solutions = solver.ask()
-        # create a list with the fitness
-        fitness_list = np.zeros(solver.popsize)
-        # parallel run of fitness evaluation
-        with ThreadPool() as pool:
-            id_solutions = [(i, solutions[i]) for i in range(len(solutions))]
-            # wrapper to add the index of solution in the array, to the response of the ThreadPool
-            # this keeps the fitness_list and solutions list in the same order (necessary)
-            fit_func_parallel_wrapper = (lambda i, x: [i, fit_func(x)] )
-            for result in pool.starmap(fit_func_parallel_wrapper, id_solutions, chunksize=4):
-                i, fitness = result
-                fitness_list[i] = fitness
+        # calcultate fitness
+        fitness_list = np.zeros(len(solutions))
+        for i in range(len(solutions)):
+            fitness_list[i] = fit_func(solutions[i])
         # pass the fitness to the solver so it can decide the best individual
         solver.tell(fitness_list)
         result = solver.result() # first element is the best solution, second element is the best fitness

@@ -1,0 +1,6 @@
+V_S,8.5
+NPOPULATION,30
+MAX_ITERATION,30
+SEED,6
+Solver Name,DE_mod
+New Fitness,True

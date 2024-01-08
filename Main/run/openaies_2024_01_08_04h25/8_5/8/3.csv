@@ -1,0 +1,333 @@
+D = propeller diameter [m],AEdAO = expanded area ratio,PdD = pitch ratio,Z = propeller's number of blades,P_B = power brake,n = Propeller angular speed [rpm],fitness,t075dD,tmin075dD,tal07R,cavLim,Vtip,Vtipmax,penalty,valid
+0.5,0.9015871910977069,0.6335516536596234,3,270.327464605266,0,-920.8268079174522,0.01475,0.015506292963202424,0.1309888450021592,0.04743207003435419,62.24227487123711,39,2.406338343246217,False
+0.6241337603152091,0.9294999548349677,0.7632682152036419,3,223.03432969533284,0,-381.9600006724981,0.01475,0.014050822969859416,0.16203997233346715,0.10319646250175803,44.55176234873627,39,0.7125614751516474,False
+0.6147193880737365,1.05,0.5995557443143558,3,236.93917698645527,0,-442.388826866564,0.01475,0.013976608136694825,0.09368293354468538,0.06424681428686413,54.94812398102952,39,0.8670986896010588,False
+0.5632919828300723,0.9993384301018504,0.5466736152920004,3,260.53117587656743,0,-668.228044213995,0.01475,0.014514858277085266,0.08665029921420074,0.044850629308029966,63.68281819124417,39,1.5648678779639913,False
+0.5,1.0476632354552715,0.6388048156362957,3,274.6436685060627,0,-830.8724706884416,0.01475,0.015562933226348276,0.11308700829863387,0.0475433786439712,62.18286071042065,39,2.02527444090742,False
+0.6815694594994868,0.9956135064533027,0.505358260906339,3,237.8792335536658,0,-413.6121530575869,0.01475,0.013241303406003404,0.06980822137854431,0.05595215190917264,58.15317551052975,39,0.7387484686185335,False
+0.6752720552486335,0.9332947420798858,0.7052475195586991,3,208.74074932487216,0,-302.09555949137575,0.01475,0.013414251964976073,0.1370313073251249,0.1044253822285318,44.264497431814625,39,0.44722849021305144,False
+0.5764557926943705,1.0074394070370447,0.6871734141646982,3,239.92207172077525,0,-491.89289828203795,0.01475,0.01453935301840871,0.1284467149193661,0.07448528069600721,51.70470878615343,39,1.0502194514830216,False
+0.8,1.05,0.7591879019202996,3,182.71543788403167,0,-182.71543788403167,0.01475,0.012382967228351333,0.12801361186799717,0.14483661260377578,36.42362532742003,39,0,True
+0.5,1.05,0.5755939564155316,3,283.9375586749952,0,nan,0.01475,0.01546068757951608,0.0931566787168247,nan,67.93252733618361,39,nan,False
+fitness at iteration,0,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,1,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,2,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,3,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,4,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,5,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,6,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,7,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,8,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,9,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,10,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,11,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,12,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,13,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,14,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,15,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,16,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,17,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,18,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,19,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,20,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,21,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,22,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,23,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,24,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,25,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,26,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,27,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,28,,,,,nan
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+nan,nan,nan,3,nan,0,nan,0.01475,nan,nan,nan,nan,39,nan,False
+fitness at iteration,29,,,,,nan
+Best Solution
+0.5,1.05,0.5755939564155316,3,,,nan

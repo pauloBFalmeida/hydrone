@@ -98,7 +98,7 @@ def DifEvo_LH2(V_S, csv_filename, original_fitness=True):
     Xk[:, :, 0] = Xi[:, :]
 
     for k in range(1, kmax + 1):
-        print(k)
+        print('iteration', k)
         for i in range(pop_size):
             alfa = np.random.randint(pop_size)
             beta = np.random.randint(pop_size)
@@ -130,7 +130,7 @@ def DifEvo_LH2(V_S, csv_filename, original_fitness=True):
             # Calculando o valor da função objetivo para xpo
             VFpo[i, 0], VFpo[i, 1], VFpo[i, 2], VFpo[i, 3], VFpo2[i, 0], VFpo2[i, 1], VFpo2[i, 2], VFpo2[i, 3], VFpo2[i, 4], VFpo2[i, 5] = F_LabH2_return_constraints(V_S, xpo[i, 0], xpo[i, 1], xpo[i, 2], xpo[i, 3])
             of += 1
-            print(of)
+            # print('offspring', of)
 
 
 #           --- Calculating fitness ---
@@ -211,9 +211,7 @@ def DifEvo_LH2(V_S, csv_filename, original_fitness=True):
             fID.write(f'best fit at iteration {k},{VF[i, 0]}\n')
 
     # Obtenha o melhor resultado
-    print('best')
-    print(X)
-    print(VF)
+    print('best', X, VF)
 
     best_params = np.zeros(nv)
     best_fitness = 999

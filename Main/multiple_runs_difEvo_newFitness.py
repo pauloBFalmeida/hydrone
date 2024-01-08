@@ -142,6 +142,5 @@ if __name__ == '__main__':
 
     # list of V_S, each V_S in the list will be run NUMBER_OF_SEEDS_TO_RUN times
     V_S_list = [7.0, 7.5, 8.0, 8.5]
-    V_S_list = [8.5]
 
     run_multiple_DifEvo_newFitness(NUMBER_OF_SEEDS_TO_RUN, V_S_list)
