@@ -1,3 +1,6 @@
+This branch contains the octave propeller code converted to python, and uses py numba to execute faster 
+More tests are needed but it should run 10 to 15 times faster than the normal octave version
+
 # hydrone (Pt)
 
 ## Main
